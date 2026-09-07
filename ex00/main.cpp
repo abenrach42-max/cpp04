@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
 int main()
 {
@@ -22,6 +22,10 @@ int main()
     i->makeSound();
     j->makeSound();
     meta->makeSound();
+    const WrongAnimal *mimi = new WrongCat();
+    std::cout << mimi->getType() << std::endl;
+    mimi->makeSound();
+    delete mimi;
     delete i;
     delete j;
     delete meta;
