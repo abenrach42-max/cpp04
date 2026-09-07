@@ -17,6 +17,22 @@ Animal::Animal(void) : _type("Unknow")
     std::cout << "Animal constructor called" << std::endl;
 }
 
+Animal::Animal(const Animal &src)
+{
+    std::cout << "Animal copy constructor called" << std::endl;
+    *this = src;
+}
+
+Animal  &Animal::operator=(const Animal &src)
+{
+    std::cout << "Animal copy assignement called" << std::endl;
+    if (this != &src)
+    {
+        this->_type = src._type;
+    }
+    return (*this);
+}
+
 void    Animal::makeSound(void) const
 {
     std::cout << "..........." << std::endl;
@@ -32,34 +48,3 @@ Animal::~Animal(void)
     std::cout << "Animal destructor called" << std::endl;
 }
 
-Dog::Dog(void)
-{
-    this->_type = "Dog";
-    std::cout << "Dog constructor called" << std::endl;
-}
-
-void    Dog::makeSound(void) const
-{
-    std::cout << "Woaf Woaf" << std::endl;
-}
-
-Dog::~Dog(void)
-{
-    std::cout << "Dog destructor called" << std::endl;
-}
-
-Cat::Cat(void)
-{
-    this->_type = "Cat";
-    std::cout << "Cat constructor called" << std::endl;
-}
-
-void    Cat::makeSound(void) const
-{
-    std::cout << "Miawwwwww" << std::endl;
-}
-
-Cat::~Cat(void)
-{
-    std::cout << "Cat destructor called" << std::endl;
-}

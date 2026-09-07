@@ -22,25 +22,11 @@ class   Animal
         std::string _type;
     public:
         Animal(void);
+        Animal(const Animal &src);
+        Animal  &operator=(const Animal &src);
         std::string getType(void) const;
         virtual void    makeSound(void) const;
         virtual ~Animal(void);
-};
-
-class   Dog : public Animal
-{
-    public:
-        Dog(void);
-        virtual void    makeSound(void) const;
-        virtual ~Dog(void);
-};
-
-class   Cat : public Animal
-{
-    public:
-        Cat(void);
-        virtual void    makeSound(void) const;
-        virtual ~Cat(void);
 };
 
 #endif

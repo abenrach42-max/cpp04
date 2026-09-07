@@ -6,7 +6,10 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = main.cpp \
 	Animal.cpp \
-	WrongAnimal.cpp
+	WrongAnimal.cpp \
+	WrongCat.cpp \
+	Dog.cpp \
+	Cat.cpp 
 
 OBJS = $(SRCS:.cpp=.o)
 
